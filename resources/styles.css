@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html, body, [class*="css"]  {
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInBackground {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.fade-in-when-scroll {
+    opacity: 0;
+    animation: fadeInWhenScroll 1s ease-in forwards;
+}
+
+@keyframes fadeInWhenScroll {
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-trigger {
+    visibility: hidden;
+}
+
+[data-testid="stFullScreenFrame"] {
+    /* background: #111; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #121212;
+    border: 1px solid #6e6e6e;
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(38, 38, 38, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+[data-testid="stImageContainer"] {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+[data-testid="stAppViewContainer"] {
+    background: radial-gradient(circle at top right, #620000 0%, #121212 36%, #000 100%);
+    background-attachment: fixed;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+[data-testid="stAppViewContainer"]::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Initial black background */
+    z-index: -2; /* Ensure it's behind ::after */
+    opacity: 1;
+    animation: fadeOut 3s ease-in-out forwards;
+    animation-delay: 2s; /* Start 2 seconds after Super Title */
+}
+
+[data-testid="stAppViewContainer"]::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at top right, #620000 0%, #121212 56%, #121212 100%); */
+    z-index: -1; /* Bring it in front of ::before */
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    animation-delay: 2s; /* Start 2 seconds after Super Title */
+}
+
+[data-testid="stMain"] {
+    width: 120%;
+}
+/* [data-testid="stVerticalBlockBorderWrapper"] {
+    width: 120%;
+} */
+
+[data-testid="stHorizontalBlock"] {
+    background: #121212;
+    border: 1px solid #6e6e6e;
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(38, 38, 38, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+[data-baseweb="slider"] {
+    background: #333;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    /* padding: 10px; */
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* [data-testid="stHorizontalBlock"] * {
+    width: 80%;
+} */
+
+/* Optional: Customize text color */
+[data-testid="stAppViewContainer"] * {
+    color: #ffffff;
+}
+
+/* Style for the card */
+.card {
+    background-color: #808080;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+/* Style for the card container */
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
